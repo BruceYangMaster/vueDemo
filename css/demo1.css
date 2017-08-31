@@ -1,0 +1,45 @@
+@import "../css/reset.css";
+
+.nav {
+    background: #e0ffff;
+    overflow: hidden;
+    /*height: 30%;*/
+}
+
+.nav-first {
+    float: left;
+    margin-left: 2rem;
+}
+
+.nav-second {
+    float: left;
+    margin-left: 10rem;
+}
+
+.content {
+    clear: both;
+    background: #ffd2cf;
+}
+
+ol {
+    /**
+    list-style-type -- 定义列表样式
+disc: 点
+circle: 圆圈
+square: 正方形
+decimal: 数字
+decimal-leading-zero: 十进制数，不足两位的补齐前导0，例如: 01, 02, 03, ..., 98, 99
+lower-roman: 小写罗马文字，例如: i, ii, iii, iv, v, ...
+upper-roman: 大写罗马文字，例如: I, II, III, IV, V, ...
+lower-greek: 小写希腊字母，例如: α(alpha), β(beta), γ(gamma), ...
+lower-latin: 小写拉丁文，例如: a, b, c, ... z
+upper-latin: 大写拉丁文，例如: A, B, C, ... Z
+armenian: 亚美尼亚数字
+georgian: 乔治亚数字，例如: an, ban, gan, ..., he, tan, in, in-an, ...
+lower-alpha: 小写拉丁文，例如: a, b, c, ... z
+upper-alpha: 大写拉丁文，例如: A, B, C, ... Z
+none: 无(取消所有的list样式)
+inherit:继承
+     */
+    list-style-type: decimal;
+}
