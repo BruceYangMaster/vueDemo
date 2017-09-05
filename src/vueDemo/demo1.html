@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <script src="../../js/vue.min.js"></script>
+    <title>vue基础demo</title>
 </head>
 <body>
-
+<div class="app">
+    <h2>{{msg}}</h2>
+</div>
+<div class="app2">
+    <button v-on:click="showMsg">click</button>
+    <h3>{{msg}}</h3>
+</div>
+<div class="app3">
+    <h3>{{msg}}</h3>
+</div>
+<script>
+    var data = {msg: "hello world"};
+    var temp = new Vue({
+        el: ".app",
+        data: data
+    });
+    temp.$data.msg = "创建一个vue的简单实例";
+    temp.$data === data; // => true
+    temp.$el === document.getElementById('app');// => true
+    //
+    var temp2 = new Vue({
+        el: ".app2",
+        data: {msg: "方法methods"},
+        methods: {
+            showMsg: function () {
+                alert("vue的方法");
+            }
+        }
+    });
+    //
+    var temp3 = new Vue({
+        el: ".app3",
+        data: {
+            msg: "数据绑定"
+        }
+    });
+</script>
 </body>
 </html>

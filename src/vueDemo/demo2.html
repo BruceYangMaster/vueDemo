@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ch-zh">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../js/vue.min.js"></script>
+    <title>指令</title>
+</head>
+<body>
+<div class="list-v">
+    <ol>
+        <h3>
+            <li v-for="item in items">{{ item.message }}</li>
+        </h3>
+    </ol>
+</div>
+<div class="app">
+    <h1>开始写指令的demo</h1>
+    <!--v-bind里面的属性由data提供-->
+    <img v-bind:src="img">
+    <br>
+    <!--v-model数据双向绑定，不仅仅用于input-->
+    价格：<input type="text" v-model="price">
+    <p>你输入的价格是：{{price}}</p>
+    <br>
+    <h4>if-else</h4>
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-else>No</h1>
+    <br>
+    <!--v-on主要用于事件绑定-->
+    <button @click="onClick">点击v-on</button>
+    <br>
+    <!--v-html  v-text-->
+    <p v-html="html"></p>
+    <p v-text="text"></p>
+    <!--v-once-->
+    <span v-once>{{msg}}</span>
+    <!--v-el-->
+</div>
+<script>
+
+    var app = new Vue({
+        el: ".app",
+        data: {
+            img: "http://www.xinhuanet.com/photo/titlepic/113698945_title0h.jpg",
+            price: 100,
+            ok: false,
+            text: "<p>hello v-text</p>",
+            html: "<p>hello v-html</p>",
+            msg: "once只渲染一次"
+        },
+        methods: {
+            onClick: function () {
+                alert("v-on")
+            }
+        }
+    });
+    var demo1 = new Vue({
+        el: ".list-v",
+        data: {
+            items: [
+                {message: 'v-bind'},
+                {message: 'v-model'},
+                {message: 'v-if/v-else/v-show'},
+                {message: 'v-for'},
+                {message: 'v-on'},
+                {message: 'v-text'},
+                {message: 'v-html'},
+                {message: 'v-el'},
+                {message: 'v-ref'},
+                {message: 'v-pre'},
+                {message: 'v-cloak'},
+                {message: 'v-once'},
+                {message: '自定义指令'},
+                {message: '指令的高级选项'},
+                {message: '钩子函数，update函数，参数binding对象'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>
